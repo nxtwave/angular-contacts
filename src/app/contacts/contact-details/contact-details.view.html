@@ -1,0 +1,90 @@
+<section>
+  <style>
+    .icon {
+      font-size: 80%;
+    }
+  </style>
+
+  <div class="page-header">
+    <h1><span class="glyphicon glyphicon-user icon" aria-hidden="true"></span>
+      {{vm.contact.firstName}}&nbsp;{{vm.contact.lastName}}</h1>
+  </div>
+
+  <form class="form" ng-submit="vm.onSubmit()">
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" class="form-control" id="company" name="company" ng-model="vm.contact.company">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-lg-4">
+        <div class="form-group">
+          <label for="lastname">Lastname</label>
+          <input type="text" class="form-control" id="lastname" name="lastname" ng-model="vm.contact.lastName">
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-4">
+        <div class="form-group">
+          <label for="firstname">Firstname</label>
+          <input type="text" class="form-control" id="firstname" name="firstname" ng-model="vm.contact.firstName">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label for="street">Street</label>
+          <input type="text" class="form-control" id="street" name="street" ng-model="vm.contact.street">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" class="form-control" id="city" name="city" ng-model="vm.contact.city">
+        </div>
+      </div>
+
+      <div class="col-lg-2">
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" class="form-control" id="state" name="state" ng-model="vm.contact.state">
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="form-group">
+          <label for="zip">Zip</label>
+          <input type="text" class="form-control" id="zip" name="state" ng-model="vm.contact.zip">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" class="form-control" id="phone" name="phone" ng-model="vm.contact.phone">
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" ng-model="vm.contact.email">
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+
+    <button class="btn btn-default" type="submit">Cancel</button>
+    <button class="btn btn-primary" type="submit">Save</button>
+  </form>
+</section>
