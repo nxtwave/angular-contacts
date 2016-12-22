@@ -34,6 +34,22 @@ module.exports = {
         })
       },
 
+      /*
+      {
+        test: /\.scss$/,
+        exclude: '/node_modules/',
+        loaders: ['raw-loader', 'sass-loader']
+      },
+      */
+
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'raw-loader!sass-loader'
+        })
+      },
+
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader?name=fonts/[name].[ext]'
@@ -65,11 +81,13 @@ module.exports = {
       jQuery: "jquery"
     }),
 
+    /*
     new webpack.optimize.UglifyJsPlugin({
       compress:{
         warnings: true
       }
     }),
+    */
 
     new CopyWebpackPlugin(
       [

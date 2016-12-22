@@ -12,6 +12,7 @@
       $urlRouterProvider.otherwise('/home');
 
       $stateProvider
+
         .state({
           name: 'home',
           url: '/home',
@@ -35,10 +36,7 @@
           url: '/about',
           component: 'about'
         })
+
     }
 
 })();
-
-
-
-
