@@ -110,6 +110,8 @@ in the view area.
 ## Route Implementation
 
 ### Home Component
+The home component is very simple, and its basic purpose is to establish the source of
+the markup for the view template.
 
 ```
 (function() {
@@ -139,6 +141,9 @@ in the view area.
 ```
 
 ### Contacts Component
+The contact component is a bit more complex. It uses a new Angular 1.5+ lifecycle method
+called: $onInit for initializing the data for the controller. When the controller has
+been initialized, the $onInit method is called automatically.
 ```
 (function() {
   'use strict';
@@ -176,6 +181,8 @@ in the view area.
 ```
 
 ### About Component
+The about component is very simple, and its basic purpose is to establish the source of
+the markup for the view template.
 ```
 (function() {
   'use strict';
@@ -200,6 +207,17 @@ in the view area.
 ```
 
 ### Contact-Details Component
+The contact-details component is the most complex relatively speaking. Notice that the
+controller of the component injects the following properties:
+
+* $state - the state object to use for navigation
+* $stateParams - the parameters object contains the properties passed to this component
+
+First it retrieves the contactId parameter value from $stateParams so we know which
+contact to retrieve. Then in the $onInit method, the contactId value is used to retrieve
+the contact to display. When the contact form is submitted, the onSubmit method is invoked,
+and it uses the $state.go method to navigate back to the contact list.
+
 ```
 (function() {
   'use strict';
