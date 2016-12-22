@@ -56,7 +56,9 @@
       <div class="col-lg-2">
         <div class="form-group">
           <label for="state">State</label>
-          <input type="text" class="form-control" id="state" name="state" ng-model="vm.contact.state">
+          <select class="form-control" id="state" name="state" ng-model="vm.contact.state">
+            <option ng-repeat="state in vm.states" value="{{state.abbreviation}}">{{state.name}}</option>
+          </select>
         </div>
       </div>
       <div class="col-lg-2">
@@ -71,7 +73,7 @@
       <div class="col-lg-4">
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input type="text" class="form-control" id="phone" name="phone" ng-model="vm.contact.phone">
+          <input type="tel" class="form-control" id="phone" name="phone" ng-model="vm.contact.phone">
         </div>
       </div>
       <div class="col-lg-4">

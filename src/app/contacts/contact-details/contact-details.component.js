@@ -20,6 +20,9 @@
     // the contact object:
     vm.contact = undefined;
 
+    // the state list:
+    vm.states = undefined;
+
     /**
      * initialize component
      */
@@ -27,6 +30,11 @@
       Dataservice.getContact(vm.contactId)
         .then(function(contact) {
           vm.contact = contact;
+        });
+
+      Dataservice.getStates()
+        .then(function(states) {
+          vm.states = states;
         });
     };
 
