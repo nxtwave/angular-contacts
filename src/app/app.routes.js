@@ -36,6 +36,7 @@
           url: '/about',
           component: 'about'
         })
+
     }
 
 })();

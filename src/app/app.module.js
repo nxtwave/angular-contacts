@@ -11,7 +11,7 @@
   ]);
 
   require('bootstrap/dist/css/bootstrap.css');
-  require('./app.css');
+  require('../sass/app.scss');
 
   require('./app.routes');
 
