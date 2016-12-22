@@ -180,6 +180,46 @@ been initialized, the $onInit method is called automatically.
 
 ```
 
+### Contacts View
+The contacts view is significant because it contains links to the contacts detail state.
+The anchor tag for the contact name column contains a special routing directive
+<ui-sref> which points to the target state of "contact", and it includes a parameter value
+of the contactId.
+
+```
+<section>
+
+  <div class="page-header">
+    <h1><span class="glyphicon glyphicon-list-alt icon-header" aria-hidden="true"></span>&nbsp;Contacts List</h1>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table">
+      <caption>List of your contacts</caption>
+      <thead>
+      <tr>
+        <th scope="col">Contact</th>
+        <th scope="col">Company</th>
+        <th scope="col">City</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="contact in vm.contacts">
+        <td><a ui-sref="contact({contactId: contact.id})">{{contact.lastName}}, {{contact.firstName}}</a></td>
+        <td>{{contact.company}}</td>
+        <td>{{contact.city}}, {{contact.state}}</td>
+        <td>{{contact.phone}}</td>
+        <td>{{contact.email}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+```
+
 ### About Component
 The about component is very simple, and its basic purpose is to establish the source of
 the markup for the view template.
