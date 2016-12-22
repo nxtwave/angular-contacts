@@ -68,7 +68,7 @@ the <ui-view></ui-view> tags of the main view.
 
 ## Layout and Navigation
 The anchor tag links use the ui-sref directive for navigation to the route state. The
-ui-sref-active directive on the <li> tag sets the active class on the active link. The 
+ui-sref-active directive on the list item tag sets the active class on the active link. The 
 <ui-view></ui-view> directive is the space where the view of the active state will 
 display. 
 
