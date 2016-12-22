@@ -66,6 +66,47 @@ the <ui-view></ui-view> tags of the main view.
 })();
 ```
 
+## Layout and Navigation
+The anchor tag links use the ui-sref directive for navigation to the route state. The
+ui-sref-active directive on the <li> tag sets the active class on the active link. The 
+<ui-view></ui-view> directive is the space where the view of the active state will 
+display. 
+
+When the user selects a menu item, the state is set, and the corresponding view is displayed
+in the view area.
+
+```
+<div>
+
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">I-Contact</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+          <li ui-sref-active="active"><a ui-sref="contacts">Contacts</a></li>
+          <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <ui-view></ui-view>
+  </div>
+
+</div>
+```
+
 ## Route Implementation
 
 ### Home Component
