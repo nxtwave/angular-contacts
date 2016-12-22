@@ -12,6 +12,7 @@
       $urlRouterProvider.otherwise('/home');
 
       $stateProvider
+
         .state({
           name: 'home',
           url: '/home',
@@ -38,7 +39,3 @@
     }
 
 })();
-
-
-
-
