@@ -4,7 +4,7 @@
   angular
     .module('app.contacts')
     .component('contacts', {
-      template: '<ui-view></ui-view>',
+      template: '<section><ui-view></ui-view></section>',
       controllerAs: 'vm'
     });
 
