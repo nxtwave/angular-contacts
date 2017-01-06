@@ -36,7 +36,7 @@ the <ui-view></ui-view> tags of the main view.
       $urlRouterProvider.otherwise('/home');
 
       $stateProvider
-        
+
         .state({
           name: 'home',
           url: '/home',
@@ -44,25 +44,32 @@ the <ui-view></ui-view> tags of the main view.
         })
 
         .state({
-          name: 'contacts',
-          url: '/contacts',
-          component: 'contacts'
-        })
-
-        .state({
-          name: 'contact',
-          url: '/contact/{contactId}',
-          component: 'contact'
-        })
-
-        .state({
           name: 'about',
           url: '/about',
           component: 'about'
         })
-      
-    }
 
+        .state({
+          abstract: true,
+          name: 'contacts',
+          url: '/contacts',
+          template: '<ui-view></ui-view>'
+        })
+
+        .state({
+          name: 'contacts.list',
+          url: '/list',
+          component: 'contacts'
+        })
+
+        .state({
+          name: 'contacts.detail',
+          url: '/{contactId}',
+          component: 'contact'
+        })
+
+    }
+    
 })();
 ```
 
@@ -93,7 +100,7 @@ in the view area.
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
-          <li ui-sref-active="active"><a ui-sref="contacts">Contacts</a></li>
+          <li ui-sref-active="active"><a ui-sref="contacts.list">Contacts</a></li>
           <li ui-sref-active="active"><a ui-sref="about">About</a></li>
         </ul>
       </div>
@@ -193,6 +200,8 @@ of the contactId.
     <h1><span class="glyphicon glyphicon-list-alt icon-header" aria-hidden="true"></span>&nbsp;Contacts List</h1>
   </div>
 
+  <ui-view></ui-view>
+
   <div class="table-responsive">
     <table class="table">
       <caption>List of your contacts</caption>
@@ -207,7 +216,7 @@ of the contactId.
       </thead>
       <tbody>
       <tr ng-repeat="contact in vm.contacts">
-        <td><a ui-sref="contact({contactId: contact.id})">{{contact.lastName}}, {{contact.firstName}}</a></td>
+        <td><a ui-sref="contacts.detail({contactId: contact.id})">{{contact.lastName}}, {{contact.firstName}}</a></td>
         <td>{{contact.company}}</td>
         <td>{{contact.city}}, {{contact.state}}</td>
         <td>{{contact.phone}}</td>
