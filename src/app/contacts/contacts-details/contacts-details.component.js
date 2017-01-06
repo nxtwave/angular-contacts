@@ -3,8 +3,8 @@
 
   angular
     .module('app.contacts')
-    .component('contact', {
-      template: require('./contact-details.view.html'),
+    .component('contacts.detail', {
+      template: require('./contacts-details.view.html'),
       controller: ContactDetailsController,
       controllerAs: 'vm'
     });

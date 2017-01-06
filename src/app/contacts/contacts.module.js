@@ -4,7 +4,8 @@
   angular
     .module('app.contacts', []);
 
-  require('./contact-list/contacts.component.js');
-  require('./contact-details/contact-details.component');
+  require('./contacts.component.js');
+  require('./contacts-list/contacts-list.component.js');
+  require('./contacts-details/contacts-details.component');
 
 })();
