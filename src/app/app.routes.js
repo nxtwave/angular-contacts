@@ -20,21 +20,28 @@
         })
 
         .state({
+          name: 'about',
+          url: '/about',
+          component: 'about'
+        })
+
+        .state({
+          abstract: true,
           name: 'contacts',
           url: '/contacts',
+          template: '<ui-view></ui-view>'
+        })
+
+        .state({
+          name: 'contacts.list',
+          url: '/list',
           component: 'contacts'
         })
 
         .state({
-          name: 'contact',
-          url: '/contact/{contactId}',
+          name: 'contacts.detail',
+          url: '/{contactId}',
           component: 'contact'
-        })
-
-        .state({
-          name: 'about',
-          url: '/about',
-          component: 'about'
         })
 
     }
