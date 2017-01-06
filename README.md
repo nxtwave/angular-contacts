@@ -290,13 +290,23 @@ and it uses the $state.go method to navigate back to the contact list.
     // the contact object:
     vm.contact = undefined;
 
+    // the state list:
+    vm.states = undefined;
+
     /**
      * initialize component
      */
     vm.$onInit = function activate() {
+      console.log('contact-detail.init', vm.contactId);
+
       Dataservice.getContact(vm.contactId)
         .then(function(contact) {
           vm.contact = contact;
+        });
+
+      Dataservice.getStates()
+        .then(function(states) {
+          vm.states = states;
         });
     };
 
@@ -304,11 +314,17 @@ and it uses the $state.go method to navigate back to the contact list.
      * form submit handler
      */
     vm.onSubmit = function() {
-      $state.go('contacts');
+      $state.go('contacts.list');
     };
+
+    /**
+     * Cancel edit
+     */
+    vm.cancel = function() {
+      $state.go('contacts.list');
+    }
 
   }
 
 })();
-
 ```
