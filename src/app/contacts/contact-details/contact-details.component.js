@@ -27,6 +27,8 @@
      * initialize component
      */
     vm.$onInit = function activate() {
+      console.log('contact-detail.init', vm.contactId);
+
       Dataservice.getContact(vm.contactId)
         .then(function(contact) {
           vm.contact = contact;
@@ -42,8 +44,15 @@
      * form submit handler
      */
     vm.onSubmit = function() {
-      $state.go('contacts');
+      $state.go('contacts.list');
     };
+
+    /**
+     * Cancel edit
+     */
+    vm.cancel = function() {
+      $state.go('contacts.list');
+    }
 
   }
 
