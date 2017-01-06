@@ -9,11 +9,11 @@ component which contains a controller and a view.
 
 ### Primary Routes
 * Home
-* Contacts
+* Contacts.list
 * About
 
 ### Secondary Route
-* Contact
+* Contacts.detail
 
 ## Route Configuration
 The application routes are configured in /src/app/app.routes.js. The four routes are
