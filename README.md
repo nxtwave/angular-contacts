@@ -144,7 +144,6 @@ the markup for the view template.
   }
 
 })();
-
 ```
 
 ### Contacts Component
@@ -184,7 +183,6 @@ been initialized, the $onInit method is called automatically.
   }
 
 })();
-
 ```
 
 ### Contacts View
