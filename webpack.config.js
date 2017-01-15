@@ -94,6 +94,10 @@ module.exports = {
         {
           from: './src/app/index.html',
           to: './index.html'
+        },
+        {
+          from: './src/img',
+          to: './img'
         }
       ],
         {
